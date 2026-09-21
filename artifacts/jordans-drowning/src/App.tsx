@@ -16,7 +16,6 @@ function staticRoot() {
 function ImportedPageFrame({ page }: { page: ImportedPage }) {
   const [loaded, setLoaded] = useState(false);
   const src = useMemo(() => `${staticRoot()}${page}`, [page]);
-  const hasMissingOptionalAssets = page === 'finaljordan(1).html';
 
   return (
     <main className="imported-site-shell">
@@ -24,13 +23,6 @@ function ImportedPageFrame({ page }: { page: ImportedPage }) {
         <div className="imported-site-loading" role="status" data-testid="status-loading-imported-site">
           Loading Jordan&apos;s Drowning…
         </div>
-      )}
-      {hasMissingOptionalAssets && (
-        <aside className="missing-assets-note" data-testid="status-missing-assets">
-          Archive note: the original deep-dive references optional overlay assets
-          <code>jogu.png</code> and <code>nanamei.png</code>, which were not included in the upload.
-          The original runtime still executes and removes unavailable overlays without blocking the story.
-        </aside>
       )}
       <iframe
         className="imported-site-frame"

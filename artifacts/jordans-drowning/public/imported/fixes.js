@@ -21,7 +21,7 @@
     ' .page[data-page="11"] .brainScene.brainScene>.speech:nth-child(5){left:3%!important;right:auto!important;top:165px!important;width:44%!important;}',
     ' .page[data-page="11"] .brainScene.brainScene>.speech:nth-child(6){right:3%!important;left:auto!important;top:165px!important;width:44%!important;}',
     '}',
-    '/* jogu.png / nanamei.png render as faint overlays inside the brain',
+    '/* jogu.jpg / nanamei.jpg render as faint overlays inside the brain',
     '   artwork and the CT icon. The <img> elements are added by this script',
     '   and self-remove if the files are missing. */',
     '.brainWrap,.ctIcon{isolation:isolate;}',
@@ -55,8 +55,8 @@
   var brainPage = document.querySelector('.page[data-page="11"]');
   if (brainPage) {
     var targets = [
-      [brainPage.querySelector('.brainWrap'), 'jogu.png', 'jogu overlay inside the brain illustration'],
-      [brainPage.querySelector('.ctIcon'), 'nanamei.png', 'nanamei overlay inside the CT icon']
+      [brainPage.querySelector('.brainWrap'), 'jogu.jpg', 'jogu overlay inside the brain illustration'],
+      [brainPage.querySelector('.ctIcon'), 'nanamei.jpg', 'nanamei overlay inside the CT icon']
     ];
     targets.forEach(function (entry) {
       var host = entry[0];
