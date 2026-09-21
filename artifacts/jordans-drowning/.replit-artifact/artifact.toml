@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Jordan's Drowning"
+description = "A responsive public website imported from Jordan's Drowning source files, preserving the original pages, navigation, animation, and interactive behavior."
+version = "1.0.0"
+id = "artifacts/jordans-drowning"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25229
+
+[services.development]
+run = "pnpm --filter @workspace/jordans-drowning run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/jordans-drowning", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/jordans-drowning/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25229"
+BASE_PATH = "/"
