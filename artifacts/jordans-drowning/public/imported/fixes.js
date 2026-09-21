@@ -21,11 +21,13 @@
     ' .page[data-page="11"] .brainScene.brainScene>.speech:nth-child(5){left:3%!important;right:auto!important;top:165px!important;width:44%!important;}',
     ' .page[data-page="11"] .brainScene.brainScene>.speech:nth-child(6){right:3%!important;left:auto!important;top:165px!important;width:44%!important;}',
     '}',
-    '/* jogu.jpg / nanamei.jpg render as faint overlays inside the brain',
+    '/* jogu.png / nanamei.png render as faint overlays inside the brain',
     '   artwork and the CT icon. The <img> elements are added by this script',
     '   and self-remove if the files are missing. */',
     '.brainWrap,.ctIcon{isolation:isolate;}',
-    '.icon-overlay{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:.18;pointer-events:none;}'
+    '.icon-overlay{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:.22;z-index:2;pointer-events:none;}',
+    '/* First-page Jordan speech: keep it centered, contained, and below the icon. */',
+    '.page[data-page="0"] .person-card{min-height:340px!important;}'
   ].join('\n');
   var styleEl = document.createElement('style');
   styleEl.id = 'buffyRuntimeFixes';
@@ -55,8 +57,8 @@
   var brainPage = document.querySelector('.page[data-page="11"]');
   if (brainPage) {
     var targets = [
-      [brainPage.querySelector('.brainWrap'), 'jogu.jpg', 'jogu overlay inside the brain illustration'],
-      [brainPage.querySelector('.ctIcon'), 'nanamei.jpg', 'nanamei overlay inside the CT icon']
+      [brainPage.querySelector('.brainWrap'), 'jogu.png', 'jogu overlay inside the brain illustration'],
+      [brainPage.querySelector('.ctIcon'), 'nanamei.png', 'nanamei overlay inside the CT icon']
     ];
     targets.forEach(function (entry) {
       var host = entry[0];
@@ -71,6 +73,27 @@
       img.loading = 'lazy';
       img.addEventListener('error', function () { img.remove(); });
       host.appendChild(img);
+    });
+  }
+
+  var jordanSpeech = document.querySelector('.page[data-page="0"] .person-card > .speech');
+  if (jordanSpeech) {
+    [
+      ['left', '50%'],
+      ['right', 'auto'],
+      ['top', 'auto'],
+      ['bottom', '14px'],
+      ['transform', 'translateX(-50%)'],
+      ['width', 'calc(100% - 24px)'],
+      ['min-width', '0'],
+      ['max-width', 'calc(100% - 24px)'],
+      ['padding', '8px 12px'],
+      ['font-size', 'clamp(12px, 2.8vw, 14.5px)'],
+      ['line-height', '1.2'],
+      ['text-align', 'center'],
+      ['overflow-wrap', 'anywhere']
+    ].forEach(function (entry) {
+      jordanSpeech.style.setProperty(entry[0], entry[1], 'important');
     });
   }
 })();
