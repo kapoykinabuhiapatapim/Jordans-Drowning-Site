@@ -1031,7 +1031,7 @@ svg.ico.waterico{
 <path d="M84 55c7-55 85-66 99 0-29-20-67-18-99 0z" fill="#26312e"></path>
 <path d="M65 150q65-42 130 0l20 180H45z" fill="#4fd08e" stroke="#234d3e" stroke-width="8"></path>
 <path d="M67 172L8 235M193 172l59 63M91 330l-20 78M169 330l20 78" fill="none" stroke="#ffd2b4" stroke-linecap="round" stroke-width="28"></path>
-</svg><div class="speech" style="margin: 0px; text-align: center; box-sizing: border-box; bottom: 12px !important; width: 260px !important; min-width: 260px !important; padding: 8px 13px !important;">i feel my supremacy all over my body! lemme show yall fishes how kings do the swimming</div></div>
+</svg><div class="speech" style="margin: 0px; text-align: center; box-sizing: border-box; bottom: 12px !important; width: 256px !important; min-width: 256px !important; padding: 8px 13px !important;">feeling confident today!! let me show these fish kinsay hari ngari</div></div>
 <div class="organ-card"><svg class="ico lungsico" viewBox="0 0 520 430" style="transform: translateY(-18px) !important;">
 <path d="M248 55h24v85" fill="none" stroke="#e8fff5" stroke-linecap="round" stroke-width="20"></path>
 <path d="M260 130c-22 18-43 39-58 64M260 130c22 18 43 39 58 64M202 190c-22 24-40 49-52 80M318 190c22 24 40 49 52 80" fill="none" stroke="#e8fff5" stroke-linecap="round" stroke-width="15"></path>
@@ -1498,6 +1498,9 @@ document.querySelectorAll('.next').forEach(b=>b.addEventListener('click',()=>sho
 </script>
 <script>
 (function applyLatestVisualAdjustments(){
+  // Disabled: this block moved unrelated artwork and speech bubbles. Keep the
+  // earlier layout rules intact and apply only explicitly requested edits.
+  return;
   const page=i=>document.querySelector('.page[data-page="'+i+'"]');
   const set=(el,prop,value,important=true)=>el?.style.setProperty(prop,value,important?'important':'');
   const all=(root,selector)=>root?[...root.querySelectorAll(selector)]:[];
