@@ -29,6 +29,8 @@ function ImportedPageFrame({ page }: { page: ImportedPage }) {
         title={page === 'index.html' ? "Jordan's Drowning Story" : "Jordan's Drowning interactive deep dive"}
         src={src}
         onLoad={() => setLoaded(true)}
+        loading="eager"
+        referrerPolicy="no-referrer"
         data-testid={`iframe-${page.replace(/[^a-z0-9]+/gi, '-').toLowerCase()}`}
       />
     </main>

@@ -15,6 +15,7 @@
 html,
 body,
 #root {
+  width: 100%;
   min-height: 100%;
   margin: 0;
 }
@@ -28,19 +29,28 @@ body {
 
 .imported-site-shell {
   position: relative;
-  min-height: 100dvh;
   width: 100%;
-  overflow: hidden;
+  min-height: 100svh;
+  overflow-x: hidden;
   background: #071812;
 }
 
 .imported-site-frame {
   display: block;
   width: 100%;
-  min-height: 100dvh;
-  height: 100dvh;
+  max-width: 100vw;
+  min-height: 100svh;
+  height: 100svh;
   border: 0;
   background: #071812;
+}
+
+@supports not (height: 100svh) {
+  .imported-site-shell,
+  .imported-site-frame {
+    min-height: 100vh;
+    height: 100vh;
+  }
 }
 
 .imported-site-loading {
