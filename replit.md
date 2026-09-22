@@ -2,6 +2,8 @@
 
 _Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
 
+Deployment trigger note: Pages redeploy requested on 2026-09-22.
+
 ## Run & Operate
 
 - `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
