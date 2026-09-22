@@ -1008,6 +1008,81 @@ svg.ico.waterico{
   top:0!important;
   transform:translateY(55px)!important;
 }
+/* Final mobile scene cleanup: keep callouts above the artwork and stack the icons. */
+@media(max-width:600px){
+  .page[data-page="1"] .waterScene .speech:nth-of-type(1),
+  .page[data-page="1"] .waterScene .speech:nth-of-type(2){
+    top:78px!important;
+    width:42vw!important;
+    max-width:42vw!important;
+    min-height:0!important;
+    z-index:60!important;
+  }
+  .page[data-page="1"] .waterScene .speech:nth-of-type(1){
+    left:4%!important;
+    right:auto!important;
+  }
+  .page[data-page="1"] .waterScene .speech:nth-of-type(2){
+    right:4%!important;
+    left:auto!important;
+  }
+  .page[data-page="1"] .waterScene .swimmer{
+    top:210px!important;
+    left:50%!important;
+    width:min(155px,40vw)!important;
+    transform:translateX(-50%)!important;
+    z-index:20!important;
+  }
+  .page[data-page="1"] .waterScene .waterdrop{
+    top:470px!important;
+    right:50%!important;
+    bottom:auto!important;
+    width:min(78px,20vw)!important;
+    transform:translateX(50%)!important;
+    z-index:25!important;
+  }
+
+  .page[data-page="2"] .airwayScene>.speech:nth-of-type(1),
+  .page[data-page="2"] .airwayScene>.speech:nth-of-type(2){
+    top:78px!important;
+    width:42vw!important;
+    max-width:42vw!important;
+    min-height:0!important;
+    z-index:60!important;
+  }
+  .page[data-page="2"] .airwayScene>.speech:nth-of-type(1){
+    left:4%!important;
+    right:auto!important;
+  }
+  .page[data-page="2"] .airwayScene>.speech:nth-of-type(2){
+    right:4%!important;
+    left:auto!important;
+  }
+  .page[data-page="2"] .airwayScene>.lungsico{
+    top:220px!important;
+    left:50%!important;
+    right:auto!important;
+    width:min(275px,70vw)!important;
+    max-width:none!important;
+    transform:translateX(-50%)!important;
+    z-index:25!important;
+  }
+  .page[data-page="2"] .airwayScene .water-stream{
+    left:15%!important;
+    top:170px!important;
+    z-index:15!important;
+  }
+  .page[data-page="2"] .airwayScene .water-stream>.waterico{
+    width:76px!important;
+    left:0!important;
+    top:0!important;
+    transform:none!important;
+  }
+  .page[data-page="2"] .airwayScene .trachea-label{
+    top:520px!important;
+    z-index:30!important;
+  }
+}
 </style>
 </head>
 <body>
