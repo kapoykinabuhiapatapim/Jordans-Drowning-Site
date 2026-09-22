@@ -26,6 +26,8 @@ main{width:min(1180px,100%);margin:auto;padding:34px 34px 80px}.topline{display:
 /* Page 02 — keep the sun visible and separate the two speech bubbles. */
 .page[data-page="1"] .waterScene .speech:nth-of-type(1){left:18px!important;top:82px!important;right:auto!important;bottom:auto!important;}
 .page[data-page="1"] .waterScene .speech:nth-of-type(2){right:18px!important;top:128px!important;left:auto!important;bottom:auto!important;}
+.page[data-page="1"] .waterScene .swimmer{position:absolute!important;left:50%!important;top:120px!important;transform:translateX(-50%)!important;width:min(200px,42vw)!important;z-index:2;}
+.page[data-page="1"] .waterScene .waterdrop{position:absolute!important;right:20%!important;top:96px!important;width:min(118px,24vw)!important;z-index:3;}
 /* Page 03 — speech occupies the upper corners; lungs stay centered below it. */
 .page[data-page="2"] .airwayScene>.lungsico{right:50%!important;transform:translateX(50%);top:132px!important;width:390px!important;}
 .page[data-page="2"] .airwayScene .water-stream{left:18%!important;top:118px!important;}
@@ -166,8 +168,8 @@ main{width:min(1180px,100%);margin:auto;padding:34px 34px 80px}.topline{display:
 .page[data-page="14"] .scene:has(.finalChain){display:flex;flex-direction:column;}
 @media(max-width:600px){
   .scene > .speech{max-width:44%;font-size:12px;line-height:1.18;padding:8px 10px;}
-  .page[data-page="1"] .waterScene .swimmer{width:min(210px,52vw)!important;left:50%!important;transform:translateX(-50%)!important;}
-  .page[data-page="1"] .waterScene .waterdrop{right:min(18%,72px)!important;}
+  .page[data-page="1"] .waterScene .swimmer{top:138px!important;width:min(180px,48vw)!important;left:50%!important;transform:translateX(-50%)!important;}
+  .page[data-page="1"] .waterScene .waterdrop{top:122px!important;right:12%!important;width:min(92px,22vw)!important;}
   .page[data-page="2"] .airwayScene>.lungsico{top:170px!important;width:min(330px,78vw)!important;max-width:none!important;left:50%!important;transform:translateX(-50%)!important;}
   .page[data-page="2"] .airwayScene .trachea-label{top:478px!important;font-size:10px;}
   .page[data-page="2"] .airwayScene .speech{top:74px!important;max-width:42%!important;}
@@ -804,7 +806,12 @@ span.label{
   left:50%;
   transform:translateX(-50%) translateY(-30px);
   display:inline-block;
-  padding:5px 0;
+  width:fit-content!important;
+  max-width:none!important;
+  min-width:0!important;
+  padding:4px 10px!important;
+  white-space:nowrap!important;
+  box-sizing:border-box!important;
 }
 
 .person-card .speech{
@@ -843,12 +850,14 @@ span.label{
 .page[data-page="0"] .organ-card>.label{
   bottom:auto!important;
   position:absolute!important;
-  left:16px!important;
+  left:50%!important;
   right:auto!important;
   top:16px!important;
-  transform:none!important;
-  min-width:130px!important;
-  padding:5px 8px!important;
+  transform:translateX(-50%)!important;
+  min-width:0!important;
+  width:fit-content!important;
+  max-width:none!important;
+  padding:4px 10px!important;
   font-size:15px!important;
   text-align:center!important;
   white-space:nowrap!important;
